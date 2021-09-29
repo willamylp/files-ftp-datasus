@@ -12,7 +12,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>DOWNLOAD DOS ARQUIVOS DE ATUALIZAÇÃO - SISTEMAS DATASUS</string>
   </property>
   <widget class="QGroupBox" name="groupBox_GERAL">
    <property name="geometry">
@@ -37,8 +37,9 @@
     </property>
     <property name="font">
      <font>
-      <family>Arial Rounded MT Bold</family>
-      <pointsize>10</pointsize>
+      <family>Trebuchet MS</family>
+      <pointsize>11</pointsize>
+      <bold>true</bold>
      </font>
     </property>
     <property name="title">
@@ -55,10 +56,13 @@
      </property>
      <layout class="QHBoxLayout" name="horizontalLayout">
       <property name="spacing">
-       <number>15</number>
+       <number>10</number>
+      </property>
+      <property name="sizeConstraint">
+       <enum>QLayout::SetDefaultConstraint</enum>
       </property>
       <property name="leftMargin">
-       <number>10</number>
+       <number>0</number>
       </property>
       <property name="topMargin">
        <number>0</number>
@@ -66,6 +70,44 @@
       <property name="rightMargin">
        <number>10</number>
       </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QCheckBox" name="checkCNES">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Trebuchet MS</family>
+          <pointsize>12</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="focusPolicy">
+         <enum>Qt::StrongFocus</enum>
+        </property>
+        <property name="layoutDirection">
+         <enum>Qt::LeftToRight</enum>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(0, 0, 255);</string>
+        </property>
+        <property name="text">
+         <string>CNES</string>
+        </property>
+       </widget>
+      </item>
       <item>
        <widget class="QCheckBox" name="checkBPA">
         <property name="enabled">
@@ -91,8 +133,9 @@
         </property>
         <property name="font">
          <font>
-          <family>Impact</family>
+          <family>Trebuchet MS</family>
           <pointsize>12</pointsize>
+          <bold>true</bold>
          </font>
         </property>
         <property name="autoFillBackground">
@@ -137,8 +180,9 @@
         </property>
         <property name="font">
          <font>
-          <family>Impact</family>
+          <family>Trebuchet MS</family>
           <pointsize>12</pointsize>
+          <bold>true</bold>
          </font>
         </property>
         <property name="styleSheet">
@@ -158,7 +202,7 @@
         </property>
        </widget>
       </item>
-      <item alignment="Qt::AlignLeft">
+      <item>
        <widget class="QCheckBox" name="checkSIHD2">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
@@ -180,8 +224,9 @@
         </property>
         <property name="font">
          <font>
-          <family>Impact</family>
+          <family>Trebuchet MS</family>
           <pointsize>12</pointsize>
+          <bold>true</bold>
          </font>
         </property>
         <property name="styleSheet">
@@ -212,6 +257,13 @@
        <height>21</height>
       </rect>
      </property>
+     <property name="font">
+      <font>
+       <family>Trebuchet MS</family>
+       <pointsize>10</pointsize>
+       <italic>true</italic>
+      </font>
+     </property>
      <property name="styleSheet">
       <string notr="true">font-style: italic;</string>
      </property>
@@ -224,15 +276,16 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>260</y>
+      <y>340</y>
       <width>681</width>
       <height>71</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <family>Arial Rounded MT Bold</family>
-      <pointsize>10</pointsize>
+      <family>Trebuchet MS</family>
+      <pointsize>11</pointsize>
+      <bold>true</bold>
      </font>
     </property>
     <property name="styleSheet">
@@ -255,9 +308,7 @@
      </property>
      <property name="font">
       <font>
-       <family>Trebuchet MS</family>
        <pointsize>11</pointsize>
-       <weight>75</weight>
        <bold>true</bold>
       </font>
      </property>
@@ -294,9 +345,10 @@
      </property>
      <property name="font">
       <font>
-       <family>Arial Rounded MT Bold</family>
+       <family>Trebuchet MS</family>
        <pointsize>9</pointsize>
-       <italic>true</italic>
+       <italic>false</italic>
+       <bold>true</bold>
       </font>
      </property>
      <property name="styleSheet">
@@ -320,9 +372,7 @@
      </property>
      <property name="font">
       <font>
-       <family>Trebuchet MS</family>
        <pointsize>11</pointsize>
-       <weight>75</weight>
        <bold>true</bold>
       </font>
      </property>
@@ -359,9 +409,10 @@
      </property>
      <property name="font">
       <font>
-       <family>Arial Rounded MT Bold</family>
+       <family>Trebuchet MS</family>
        <pointsize>9</pointsize>
-       <italic>true</italic>
+       <italic>false</italic>
+       <bold>true</bold>
       </font>
      </property>
      <property name="styleSheet">
@@ -376,15 +427,16 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>180</y>
+      <y>260</y>
       <width>681</width>
       <height>71</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <family>Arial Rounded MT Bold</family>
-      <pointsize>10</pointsize>
+      <family>Trebuchet MS</family>
+      <pointsize>11</pointsize>
+      <bold>true</bold>
      </font>
     </property>
     <property name="styleSheet">
@@ -407,9 +459,7 @@
      </property>
      <property name="font">
       <font>
-       <family>Trebuchet MS</family>
        <pointsize>11</pointsize>
-       <weight>75</weight>
        <bold>true</bold>
       </font>
      </property>
@@ -443,9 +493,10 @@
      </property>
      <property name="font">
       <font>
-       <family>Arial Rounded MT Bold</family>
+       <family>Trebuchet MS</family>
        <pointsize>9</pointsize>
-       <italic>true</italic>
+       <italic>false</italic>
+       <bold>true</bold>
       </font>
      </property>
      <property name="styleSheet">
@@ -460,15 +511,16 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>100</y>
+      <y>180</y>
       <width>681</width>
       <height>71</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <family>Arial Rounded MT Bold</family>
-      <pointsize>10</pointsize>
+      <family>Trebuchet MS</family>
+      <pointsize>11</pointsize>
+      <bold>true</bold>
      </font>
     </property>
     <property name="layoutDirection">
@@ -494,9 +546,7 @@
      </property>
      <property name="font">
       <font>
-       <family>Trebuchet MS</family>
        <pointsize>11</pointsize>
-       <weight>75</weight>
        <bold>true</bold>
       </font>
      </property>
@@ -530,11 +580,10 @@
      </property>
      <property name="font">
       <font>
-       <family>Arial Rounded MT Bold</family>
+       <family>Trebuchet MS</family>
        <pointsize>9</pointsize>
-       <weight>50</weight>
-       <italic>true</italic>
-       <bold>false</bold>
+       <italic>false</italic>
+       <bold>true</bold>
       </font>
      </property>
      <property name="styleSheet">
@@ -549,7 +598,7 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>440</y>
+      <y>420</y>
       <width>681</width>
       <height>211</height>
      </rect>
@@ -986,11 +1035,10 @@
      </property>
      <property name="font">
       <font>
-       <family>Arial Rounded MT Bold</family>
+       <family>Trebuchet MS</family>
        <pointsize>10</pointsize>
-       <weight>50</weight>
        <italic>false</italic>
-       <bold>false</bold>
+       <bold>true</bold>
        <strikeout>false</strikeout>
        <kerning>true</kerning>
       </font>
@@ -1018,7 +1066,7 @@
      </property>
      <property name="icon">
       <iconset>
-       <normaloff>../../FTP_FilesSUS_Download/images/download.png</normaloff>../../FTP_FilesSUS_Download/images/download.png</iconset>
+       <normaloff>../images/download.png</normaloff>../images/download.png</iconset>
      </property>
      <property name="iconSize">
       <size>
@@ -1044,7 +1092,7 @@
     </widget>
     <widget class="QPlainTextEdit" name="text_STATUS">
      <property name="enabled">
-      <bool>false</bool>
+      <bool>true</bool>
      </property>
      <property name="geometry">
       <rect>
@@ -1093,6 +1141,15 @@
           </color>
          </brush>
         </colorrole>
+        <colorrole role="PlaceholderText">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>0</red>
+           <green>85</green>
+           <blue>0</blue>
+          </color>
+         </brush>
+        </colorrole>
        </active>
        <inactive>
         <colorrole role="WindowText">
@@ -1128,6 +1185,15 @@
            <red>255</red>
            <green>255</green>
            <blue>255</blue>
+          </color>
+         </brush>
+        </colorrole>
+        <colorrole role="PlaceholderText">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>0</red>
+           <green>85</green>
+           <blue>0</blue>
           </color>
          </brush>
         </colorrole>
@@ -1169,46 +1235,207 @@
           </color>
          </brush>
         </colorrole>
+        <colorrole role="PlaceholderText">
+         <brush brushstyle="SolidPattern">
+          <color alpha="255">
+           <red>0</red>
+           <green>85</green>
+           <blue>0</blue>
+          </color>
+         </brush>
+        </colorrole>
        </disabled>
       </palette>
      </property>
      <property name="font">
       <font>
-       <family>Trebuchet MS</family>
        <pointsize>9</pointsize>
-       <weight>75</weight>
        <bold>true</bold>
       </font>
      </property>
      <property name="cursor" stdset="0">
-      <cursorShape>ForbiddenCursor</cursorShape>
+      <cursorShape>IBeamCursor</cursorShape>
      </property>
      <property name="styleSheet">
       <string notr="true">color: rgb(0, 85, 0);</string>
      </property>
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
+     </property>
      <property name="frameShadow">
       <enum>QFrame::Plain</enum>
+     </property>
+     <property name="lineWidth">
+      <number>0</number>
+     </property>
+     <property name="verticalScrollBarPolicy">
+      <enum>Qt::ScrollBarAlwaysOn</enum>
+     </property>
+     <property name="tabChangesFocus">
+      <bool>false</bool>
+     </property>
+     <property name="documentTitle">
+      <string notr="true"/>
+     </property>
+     <property name="undoRedoEnabled">
+      <bool>false</bool>
+     </property>
+     <property name="lineWrapMode">
+      <enum>QPlainTextEdit::WidgetWidth</enum>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
      </property>
      <property name="plainText">
       <string/>
      </property>
+     <property name="overwriteMode">
+      <bool>true</bool>
+     </property>
+     <property name="textInteractionFlags">
+      <set>Qt::TextSelectableByMouse</set>
+     </property>
+     <property name="maximumBlockCount">
+      <number>0</number>
+     </property>
+     <property name="backgroundVisible">
+      <bool>false</bool>
+     </property>
+     <property name="centerOnScroll">
+      <bool>true</bool>
+     </property>
+     <property name="placeholderText">
+      <string notr="true"/>
+     </property>
     </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_CNES">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>100</y>
+      <width>671</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>11</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(0, 0, 255);</string>
+    </property>
+    <property name="title">
+     <string>CNES</string>
+    </property>
+    <widget class="QLineEdit" name="input_CMPT_CNES">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>651</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>11</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="toolTip">
+      <string/>
+     </property>
+     <property name="layoutDirection">
+      <enum>Qt::LeftToRight</enum>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0, 0, 255);</string>
+     </property>
+     <property name="inputMask">
+      <string>00/0000</string>
+     </property>
+     <property name="text">
+      <string>/</string>
+     </property>
+     <property name="cursorMoveStyle">
+      <enum>Qt::LogicalMoveStyle</enum>
+     </property>
+     <property name="clearButtonEnabled">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_CMPT_CNES">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>50</y>
+       <width>651</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>9</pointsize>
+       <italic>false</italic>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="text">
+      <string>Competência MES/ANO (Ex. 08/2021)</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QLabel" name="label_DEV">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>635</y>
+      <width>681</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Trebuchet MS</family>
+      <pointsize>10</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
+    </property>
+    <property name="locale">
+     <locale language="Portuguese" country="Brazil"/>
+    </property>
+    <property name="text">
+     <string>Desenvolvido por: Willamy Domingos</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+    </property>
    </widget>
   </widget>
   <widget class="QLabel" name="label_TITULO">
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>-5</y>
+     <y>0</y>
      <width>701</width>
-     <height>61</height>
+     <height>51</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <family>Trebuchet MS</family>
      <pointsize>16</pointsize>
-     <weight>75</weight>
      <bold>true</bold>
     </font>
    </property>
@@ -1234,4 +1461,21 @@
  </widget>
  <resources/>
  <connections/>
+ <designerdata>
+  <property name="gridDeltaX">
+   <number>10</number>
+  </property>
+  <property name="gridDeltaY">
+   <number>10</number>
+  </property>
+  <property name="gridSnapX">
+   <bool>true</bool>
+  </property>
+  <property name="gridSnapY">
+   <bool>true</bool>
+  </property>
+  <property name="gridVisible">
+   <bool>true</bool>
+  </property>
+ </designerdata>
 </ui>
