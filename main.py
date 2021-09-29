@@ -4,7 +4,7 @@ from ftplib import FTP
 import getpass
 from UI import Ui_Sys_Datasus
 from PyQt5.QtWidgets import QApplication, QMainWindow
-import speedtest
+
 class Download_FTP:
     def __init__(self):
         self.main_win = QMainWindow()
@@ -73,7 +73,6 @@ class Download_FTP:
         self.verifica_dir(local_dir)
         # Download do arquivo
         
-        #self.ui.text_STATUS.appendPlainText(str(self.size_file))
         self.ui.text_STATUS.appendPlainText(
             '--> Baixando Arquivo {} —> {} MB'.format(filename, self.size_file))
         self.local_filename = os.path.join(r"{}".format(local_dir), filename)
@@ -101,8 +100,7 @@ class Download_FTP:
             self.filename.replace('.', ''))
         self.ftp_host = "ftp2.datasus.gov.br"
         self.remote_dir = "/public/sistemas/dsweb/SIHD/Programas/"
-        self.local_dir = '/Users/{}/Downloads/Arquivos_Atualizacao/SISAIH01'.format(
-            self.user_os)
+        self.local_dir = '/Users/{}/Downloads/Arquivos_Atualizacao/SISAIH01'.format(self.user_os)
 
         self.download_file(self.ftp_host, "", "", self.remote_dir,
                       self.filename, self.local_dir)
@@ -127,7 +125,8 @@ class Download_FTP:
             'Import': ['/cnes/', 'IMPORT_{}.ZIP'.format(self.compt[1]+self.compt[0])],
             'TercBR': ['/cnes/', 'TERCEIROSBRASIL24_{}.ZIP'.format(self.compt[1]+self.compt[0])],
             'Install': ['/public/sistemas/dsweb/SIHD/Programas/', self.versao],
-            'DSIHD017': ['/public/sistemas/dsweb/SIHD/Programas/DSIHD017/', 'DSIHD017_24_{}.ZIP'.format(self.compt[1]+self.compt[0])]
+            'DSIHD017': ['/public/sistemas/dsweb/SIHD/Programas/DSIHD017/', 
+                        'DSIHD017_24_{}.ZIP'.format(self.compt[1]+self.compt[0])]
         }
 
         for key in self.files.keys():
@@ -139,7 +138,6 @@ class Download_FTP:
                                    self.files[key][0], self.files[key][1], self.local_dir)
             self.ui.text_STATUS.appendPlainText(
                 '--> {} Baixado com Sucesso!'.format(self.files[key][1]))
-
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
