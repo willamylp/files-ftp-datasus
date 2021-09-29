@@ -454,7 +454,7 @@ class Ui_Sys_Datasus(object):
 
     def retranslateUi(self, Sys_Datasus):
         _translate = QtCore.QCoreApplication.translate
-        Sys_Datasus.setWindowTitle(_translate("Sys_Datasus", "Dialog"))
+        Sys_Datasus.setWindowTitle(_translate("Sys_Datasus", "DOWNLOAD DOS ARQUIVOS DE ATUALIZAÇÃO - SISTEMAS DATASUS"))
         self.groupBox_CHECKBOX.setTitle(_translate("Sys_Datasus", "SISTEMAS DATASUS"))
         self.checkBPA.setText(_translate("Sys_Datasus", "BPA/SIA"))
         self.checkSISAIH01.setText(_translate("Sys_Datasus", "SISAIH01"))
