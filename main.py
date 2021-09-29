@@ -98,8 +98,8 @@ class Download_FTP:
             self.compt = self.compt.split('/')
 
             self.ftp_host = "ftp.datasus.gov.br"
-            self.local_dir = '/Users/{}/Downloads/Arquivos_Atualizacao/CNES/{}'.format(
-                self.user_os, self.compt)
+            self.local_dir = '/Users/{}/Downloads/Arquivos_Atualizacao/CNES/CMPT {}-{}'.format(
+                self.user_os, self.compt[0], self.compt[1])
 
             self.files = {
                 'Fornec': ['/cnes/', 'FORNEC_{}.ZIP'.format(self.compt[1]+self.compt[0])],
@@ -150,8 +150,8 @@ class Download_FTP:
 
         self.ftp_host_1 = "ftp.datasus.gov.br"
         self.ftp_host_2 = "ftp2.datasus.gov.br"
-        self.local_dir = '/Users/{}/Downloads/Arquivos_Atualizacao/SIHD2/{}'.format(
-            self.user_os, self.compt)
+        self.local_dir = '/Users/{}/Downloads/Arquivos_Atualizacao/SIHD2/CMPT {}-{}'.format(
+            self.user_os, self.compt[0], self.compt[1])
 
         self.files = {
             'Fornec': ['/cnes/', 'FORNEC_{}.ZIP'.format(self.compt[1]+self.compt[0])],
