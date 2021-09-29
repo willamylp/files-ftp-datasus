@@ -81,7 +81,7 @@ class Download_FTP:
         self.ftp = FTP(ftp_host, username, password)
         self.ftp.login()
         self.ftp.cwd(remote_dir)
-        self.size_file = (self.ftp.size(filename) / 1e+6)
+        self.size_file = (self.ftp.size(filename) / 1e+2)
 
         self.verifica_dir(local_dir)
         
