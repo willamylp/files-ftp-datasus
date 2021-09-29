@@ -19,24 +19,36 @@ class Download_FTP:
         self.main_win.show()
 
     def checked(self):
-        if(self.ui.checkBPA.isChecked()):
+        self.chkBPA = self.ui.checkBPA.isChecked()
+        self.chkSISAIH01 = self.ui.checkSISAIH01.isChecked()
+        self.chkSIHD2 = self.ui.checkSIHD2.isChecked()
+
+        if(self.chkBPA):
             self.ui.input_BPA.setEnabled(True)
         else:
             self.ui.input_BPA.setEnabled(False)
 
-        if(self.ui.checkSISAIH01.isChecked()):
-            self.ui.input_SISAIH01.setEnabled(True)
+        if(self.chkSISAIH01):
+            self.ui.input_SISAIH01.setEnabled(True)    
         else:
             self.ui.input_SISAIH01.setEnabled(False)
         
-        if(self.ui.checkSIHD2.isChecked()):
+        if(self.chkSIHD2):
             self.ui.input_CMPT.setEnabled(True)
             self.ui.input_VERSAO.setEnabled(True)
         else:
             self.ui.input_CMPT.setEnabled(False)
             self.ui.input_VERSAO.setEnabled(False)
         
-    
+        if(self.chkBPA or self.chkSIHD2 or self.chkSISAIH01):
+            self.ui.DownloadButton.setEnabled(True)
+            self.ui.label_STATUS.setEnabled(True)
+        elif(self.chkBPA and self.chkSIHD2 and self.chkSISAIH01):
+            self.ui.DownloadButton.setEnabled(False)
+            self.ui.label_STATUS.setEnabled(False)
+
+
+
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     main_win = Download_FTP()
