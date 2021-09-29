@@ -2,7 +2,8 @@ import os
 import sys
 from ftplib import FTP
 import getpass
-from UI import Ui_Sys_Datasus
+from ui.UI import Ui_Sys_Datasus
+
 from PyQt5.QtWidgets import QApplication, QMainWindow
 
 class Download_FTP:
@@ -53,8 +54,6 @@ class Download_FTP:
             self.ui.DownloadButton.setEnabled(True)
         else:
             self.ui.DownloadButton.setEnabled(False)
-        #elif(self.chkCNES and self.chkBPA and self.chkSIHD2 and self.chkSISAIH01):
-            
 
     def log_status(self, msg):
         self.ui.text_STATUS.appendPlainText(msg)
@@ -86,7 +85,6 @@ class Download_FTP:
 
         self.verifica_dir(local_dir)
         
-        # Download do arquivo
         self.ui.text_STATUS.appendPlainText(
             '--> Baixando Arquivo {} —> {} MB'.format(filename, self.size_file))
         self.local_filename = os.path.join(r"{}".format(local_dir), filename)
@@ -100,8 +98,8 @@ class Download_FTP:
             self.compt = self.compt.split('/')
 
             self.ftp_host = "ftp.datasus.gov.br"
-            self.local_dir = '/Users/{}/Downloads/Arquivos_Atualizacao/CNES'.format(
-                self.user_os)
+            self.local_dir = '/Users/{}/Downloads/Arquivos_Atualizacao/CNES/{}'.format(
+                self.user_os, self.compt)
 
             self.files = {
                 'Fornec': ['/cnes/', 'FORNEC_{}.ZIP'.format(self.compt[1]+self.compt[0])],
@@ -113,10 +111,8 @@ class Download_FTP:
                 self.download_file(self.ftp_host, "", "",
                 self.files[key][0], self.files[key][1], self.local_dir)
 
-                self.msg = '--> {} Baixado com Sucesso!'.format(self.files[key][1])
+                self.msg = '--> {} Baixado com Sucesso!\n'.format(self.files[key][1])
                 self.log_status(self.msg)
-
-
 
     def download_BPA(self):
         self.user_os = getpass.getuser()
@@ -154,8 +150,8 @@ class Download_FTP:
 
         self.ftp_host_1 = "ftp.datasus.gov.br"
         self.ftp_host_2 = "ftp2.datasus.gov.br"
-        self.local_dir = '/Users/{}/Downloads/Arquivos_Atualizacao/SIHD2'.format(
-            self.user_os)
+        self.local_dir = '/Users/{}/Downloads/Arquivos_Atualizacao/SIHD2/{}'.format(
+            self.user_os, self.compt)
 
         self.files = {
             'Fornec': ['/cnes/', 'FORNEC_{}.ZIP'.format(self.compt[1]+self.compt[0])],
@@ -174,7 +170,7 @@ class Download_FTP:
                 self.download_file(self.ftp_host_1, "", "",
                                    self.files[key][0], self.files[key][1], self.local_dir)
 
-            self.msg = '--> {} Baixado com Sucesso!'.format(self.files[key][1])
+            self.msg = '--> {} Baixado com Sucesso!\n'.format(self.files[key][1])
             self.log_status(self.msg)
 
 if __name__ == '__main__':
