@@ -102,7 +102,7 @@
          <string notr="true">color: rgb(0, 0, 127);</string>
         </property>
         <property name="text">
-         <string>BPA</string>
+         <string>BPA/SIA</string>
         </property>
         <property name="iconSize">
          <size>
@@ -260,6 +260,9 @@
        <weight>75</weight>
        <bold>true</bold>
       </font>
+     </property>
+     <property name="cursor">
+      <cursorShape>IBeamCursor</cursorShape>
      </property>
      <property name="toolTip">
       <string/>
@@ -475,7 +478,7 @@
      <string notr="true">color: rgb(0, 0, 127);</string>
     </property>
     <property name="title">
-     <string>BPA</string>
+     <string>BPA/SIA</string>
     </property>
     <widget class="QLineEdit" name="input_BPA">
      <property name="enabled">
