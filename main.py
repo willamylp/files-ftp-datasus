@@ -4,7 +4,7 @@ from ftplib import FTP
 import getpass
 from UI import Ui_Sys_Datasus
 from PyQt5.QtWidgets import QApplication, QMainWindow
-
+import speedtest
 class Download_FTP:
     def __init__(self):
         self.main_win = QMainWindow()
@@ -14,6 +14,7 @@ class Download_FTP:
         self.chkBPA = self.ui.checkBPA.isChecked()
         self.chkSISAIH01 = self.ui.checkSISAIH01.isChecked()
         self.chkSIHD2 = self.ui.checkSIHD2.isChecked()
+        
         self.ui.checkBPA.clicked.connect(self.checked)
         self.ui.checkSISAIH01.clicked.connect(self.checked)
         self.ui.checkSIHD2.clicked.connect(self.checked)
@@ -31,10 +32,8 @@ class Download_FTP:
 
         if(self.chkBPA):
             self.ui.input_BPA.setEnabled(True)
-            self.ui.text_STATUS.appendPlainText('BPA MARCADO')
         else:
             self.ui.input_BPA.setEnabled(False)
-            self.ui.text_STATUS.appendPlainText('BPA DESMARCADO')
 
         if(self.chkSISAIH01):
             self.ui.input_SISAIH01.setEnabled(True)    
@@ -54,10 +53,6 @@ class Download_FTP:
         elif(self.chkBPA and self.chkSIHD2 and self.chkSISAIH01):
             self.ui.DownloadButton.setEnabled(False)
             
-    def getSize(self, filename):
-        st = os.stat(filename)
-        return st.st_size
-
     def verifica_dir(self, directorio):
         if not (os.path.isdir(directorio)):
             os.makedirs(directorio)
@@ -66,11 +61,14 @@ class Download_FTP:
         self.ftp = FTP(ftp_host, username, password)
         self.ftp.login()
         self.ftp.cwd(remote_dir)
-        
-        # Download do arquivo
+        self.size_file = (self.ftp.size(filename) / 1e+6)
+
         self.verifica_dir(local_dir)
+        # Download do arquivo
+        
+        #self.ui.text_STATUS.appendPlainText(str(self.size_file))
         self.ui.text_STATUS.appendPlainText(
-            '--> Baixando Arquivo {} ...'.format(filename))
+            '--> Baixando Arquivo {} —> {} MB'.format(filename, self.size_file))
         self.local_filename = os.path.join(r"{}".format(local_dir), filename)
         self.lf = open(self.local_filename, "wb")
         self.ftp.retrbinary("RETR " + filename, self.lf.write, 8*1024)
