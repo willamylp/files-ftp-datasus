@@ -588,4 +588,4 @@ class Ui_Sys_Datasus(object):
         self.label_CMPT.setText(_translate("Sys_Datasus", "Competência MES/ANO (Ex. 08/2021)"))
         
         self.DownloadButton.setText(_translate("Sys_Datasus", "  BAIXAR ARQUIVOS"))
-        self.label_DEV.setText(_translate("Sys_Datasus", "Desenvolvido por: Willamy Domingos | GitHub: willamylp | E-mail: willamy.wlp@gmail.com"))
+        self.label_DEV.setText(_translate("Sys_Datasus", "Desenvolvido por: Willamy Domingos | GitHub: willamylp | E-mail: willamy.wlp@gmail.com | v3.2.1"))
