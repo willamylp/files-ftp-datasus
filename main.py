@@ -3,8 +3,7 @@ import sys
 from ftplib import FTP
 import getpass
 from ui.UI import Ui_Sys_Datasus
-
-from PyQt5.QtWidgets import QApplication, QMainWindow
+from PyQt5.QtWidgets import QApplication, QMainWindow, QMessageBox, QDialog, QPushButton
 
 class Download_FTP:
     def __init__(self):
@@ -72,6 +71,8 @@ class Download_FTP:
             self.download_SISAIH01()
         if(self.chkSIHD2):
             self.download_SIHD2()
+
+        self.dialog_success()
         
     def verifica_dir(self, directorio):
         if not (os.path.isdir(directorio)):
@@ -81,7 +82,7 @@ class Download_FTP:
         self.ftp = FTP(ftp_host, username, password)
         self.ftp.login()
         self.ftp.cwd(remote_dir)
-        self.size_file = (self.ftp.size(filename) / 1e+6)
+        self.size_file = round((self.ftp.size(filename) / 1e+6), 4)
 
         self.verifica_dir(local_dir)
         
@@ -172,6 +173,18 @@ class Download_FTP:
 
             self.msg = '--> {} Baixado com Sucesso!\n'.format(self.files[key][1])
             self.log_status(self.msg)
+
+
+    def dialog_success(self):
+        msg = QMessageBox()
+        msg.setIcon(QMessageBox.NoIcon)
+        msg.setWindowTitle("Mensagem...")
+        msg.setText('✅')
+        msg.setInformativeText("Download(s) Concluído(s) com Sucesso! ✔✔✔✔✔")
+        msg.setStandardButtons(QMessageBox.Ok)
+        msg.setStyleSheet("QLabel{min-width: 200px; font-size: 12pt; color: rgb(0, 85, 0); font-weight: bold; text-align: center; font-family: 'Trebuchet MS';}");
+        msg.exec()
+        
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
